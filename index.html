@@ -3,10 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="index.js" defer></script>
   <link rel="stylesheet" href="styles.css">
   <title>Conference ticket generator</title>
 </head>
-<body>
-  
+<body> 
+    <div class="body-elements">
+    <img src="images/pattern-lines.svg" alt="lines icon" class="line ">
+    <img src="images/pattern-circle.svg" alt="circle icon" class="circle p1 ">
+    <img src="images/pattern-circle.svg" alt="circle icon" class="circle p2 ">
+
+    <img src="images/pattern-squiggly-line-top.svg" alt="zip top image" class="zip-top">
+    <img src="images/pattern-squiggly-line-bottom.svg" alt="zip bottom image" class="zip-bottom">
+    
+    </div>
+  <main class="container">
+    <header>
+        <img src="images/logo-full.svg" alt="main logo">
+    </header>
+    <section class="main-body">
+        <div class="hero">
+            <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+            <p>Secure your spot at next year's biggest coding conference.</p>
+        </div>
+
+        <form action="#" method="post" class="form" id="form">
+            <div class="form-list">
+                <label for="fileInput">Upload Avatar</label>
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="fileInput" hidden accept="image/*">
+                    <div class="display">
+                        <div class="icon"><img src="images/icon-upload.svg" alt="upload icon"></div>
+                        <img src="" alt="avatar" class="avatar " id="pfpAvatar">
+                    </div>
+                    <p>Drag and drop or click to upload</p>
+                    <div class="pfp-buttons">
+                        <button class="pfp-btn" id="removeBtn">Remove image</button>
+                        <button class="pfp-btn" id="changeBtn">Change image</button>
+                    </div>
+                </div>
+                <p class="avatar-msg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="info-icon"><path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/><path fill="#D1D0D5" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/><path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
+                    <span class="avatar-msg-text">Upload your photo (JPG or PNG, max size: 500KB).</span>                    
+                </p>
+            </div>
+
+            <div class="form-list">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" class="text-input" autocomplete="off">
+            </div>
+
+            <div class="form-list">
+                <label for="email">Email Address</label>
+                <input type="text" id="email" class="text-input" autocomplete="off" placeholder="example@email.com">
+                <span class="error-msg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" class="info-icon"><path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z"/><path fill="#D1D0D5" d="M8.004 10.462V7.596ZM8 5.57v-.042Z"/><path stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042"/></svg>
+                    Please enter a valid email address.
+                </span>
+            </div>
+
+            <div class="form-list">
+                <label for="github">Github username</label>
+                <input type="text" id="github" class="text-input" autocomplete="off" placeholder="@yourusername">
+            </div>
+
+            <button type="submit" class="generate-btn" id="genetateBtn">Generate My Ticket</button>
+        </form>
+
+        <section class="success-container ">
+            <div class="success-details">
+                <h2> Congrats, <span class="user" id="user"></span>! Your ticket is ready.</h2>
+                <p>We've emailed your ticket to <span class="user-email" id="userEmail"></span> and will send updates in the run up to the event.</p>
+            </div>
+            <div class="ticket-wrapper">
+                <img src="images/pattern-ticket.svg" alt="ticket image">
+                <div class="ticket-details">
+                    <div class="ticket-details-left">
+                        <div class="top">
+                            <div class="ticket-logo">
+                                <img src="images/logo-mark.svg" alt="ticket logo">
+                            </div>
+                            <div class="top-details">
+                                <p>Coding Conf</p>
+                                <span class="ticket-span">Jan 31, 2025 / Austin, TX</span>
+                            </div>
+                        </div>
+
+                        <div class="bottom">
+                            <div class="ticket-avatar">
+                                <img src="images/image-avatar.jpg" alt="ticket avatar" id="ticketAvatar">
+                            </div>
+                            <div class="bottom-details">
+                                <p id="ticketName"></p>
+                                <span class="ticket-github ticket-span">
+                                    <div class="ticket-github-icon">
+                                        <img src="images/icon-github.svg" alt="github icon">
+                                    </div>
+                                    <span id="ticketGithubUsername"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket-details-right">
+                        #<span id="ticketNumber"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+  </main>
 </body>
 </html>

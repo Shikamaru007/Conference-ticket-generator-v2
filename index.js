@@ -53,7 +53,7 @@ removeBtn.addEventListener("click", (e) => {
     e. preventDefault();
     e.stopPropagation();
     uploadArea.classList.remove("active");
-    formAvatar.src = "";
+    formAvatar.src = "images/image-avatar.jpg";
     fileInput.value = "";
 });
 
@@ -65,7 +65,7 @@ changeBtn.addEventListener("click", (e) => {
 function handleFile(file) {
 
     const maxSize = 500 * 1024;
-    if(file.typeOf.startsWith("image/")){
+    if(!file.type.startsWith("image/")){
         uploadArea.classList.remove("active");
         uploadArea.classList.add("error");
         avatarError.textContent = "Upload pictures only (JPG or PNG, max size: 500KB).";
